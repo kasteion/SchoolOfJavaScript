@@ -1,0 +1,125 @@
+body {
+    background-image: linear-gradient(darkslateblue, plum);
+    color: aliceblue;
+    font-family: 'Muli', sans-serif;
+}
+
+.header {
+    height: 4em;
+}
+
+.logo {
+    width: 12em;
+}
+
+main {
+    height: calc(100vh - 8em);
+    display: flex;
+    justify-content: center;
+}
+
+.login-dialog {
+    border: 2px aliceblue solid;
+    border-radius: 8%;
+    width: 30%;
+    height: calc(100vh - 10em);
+    background-color: rgba(240, 248, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-dialog * {
+    padding: 6px 0px 6px 0px;
+    margin: 6px 0px 6px 0px;
+}
+
+.login-dialog h2 {
+    padding: 50px 0px 50px 0px;
+}
+
+.login-dialog-input {
+    width: 70%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px aliceblue solid;
+    color: aliceblue;
+    font-size: medium;
+    padding-left: 20px;
+}
+
+.login-dialog-input:focus {
+    outline: none;
+}
+
+.login-dialog-input::placeholder {
+    color: aliceblue;
+}
+
+.login-dialog-button {
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.25);
+    font-family: 'Muli', sans-serif;
+    font-size: medium;
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-dialog-button:focus {
+    outline: none;
+}
+
+.login-dialog a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.login-dialog a:hover {
+    text-decoration: underline;
+}
+
+.login-dialog-register {
+    font-weight: bold;
+}
+
+.login-dialog-social {
+    display: flex;
+}
+
+.login-dialog-social button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 14px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login-dialog-social img {
+    width: 40px;
+}
+
+.login-dialog-social button:focus {
+    outline: none;
+}
+
+footer {
+    height: 3em;
+}
+
+footer a {
+    padding-right: 10px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
