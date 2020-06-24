@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 200px;
+}
+
+.header {
+    height: 5rem;
+    background-color: darkslateblue;
+    display: flex;
+    align-items: center;
+}
