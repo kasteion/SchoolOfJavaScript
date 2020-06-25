@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     background-image: linear-gradient(darkslateblue, plum);
     color: aliceblue;
@@ -13,12 +18,12 @@ body {
 }
 
 main {
-    height: calc(100vh - 8em);
+    height: calc(100vh - 7em);
     display: flex;
     justify-content: center;
 }
 
-.login-dialog {
+.dialog {
     border: 2px aliceblue solid;
     border-radius: 8%;
     width: 30%;
@@ -27,18 +32,20 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-width: fit-content;
 }
 
-.login-dialog * {
+.dialog * {
     padding: 6px 0px 6px 0px;
     margin: 6px 0px 6px 0px;
 }
 
-.login-dialog h2 {
-    padding: 50px 0px 50px 0px;
+.dialog h2 {
+    padding: 0px 0px 50px 0px;
 }
 
-.login-dialog-input {
+.dialog-input {
     width: 70%;
     border: none;
     background-color: transparent;
@@ -48,15 +55,15 @@ main {
     padding-left: 20px;
 }
 
-.login-dialog-input:focus {
+.dialog-input:focus {
     outline: none;
 }
 
-.login-dialog-input::placeholder {
+.dialog-input::placeholder {
     color: aliceblue;
 }
 
-.login-dialog-button {
+.dialog-button {
     width: 70%;
     border: none;
     border-radius: 15px;
@@ -68,28 +75,28 @@ main {
     cursor: pointer;
 }
 
-.login-dialog-button:focus {
+.dialog-button:focus {
     outline: none;
 }
 
-.login-dialog a {
+.dialog a {
     color: aliceblue;
     text-decoration: none;
 }
 
-.login-dialog a:hover {
+.dialog a:hover {
     text-decoration: underline;
 }
 
-.login-dialog-register {
+.dialog-register {
     font-weight: bold;
 }
 
-.login-dialog-social {
+.dialog-social {
     display: flex;
 }
 
-.login-dialog-social button {
+.dialog-social button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -102,11 +109,11 @@ main {
     justify-content: space-around;
 }
 
-.login-dialog-social img {
+.dialog-social img {
     width: 40px;
 }
 
-.login-dialog-social button:focus {
+.dialog-social button:focus {
     outline: none;
 }
 
