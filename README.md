@@ -1,2 +1,3 @@
-# JavaScript-Repertoire
-Stuff in JavaScript
+# School Of JavaScript
+
+Material de aprendizaje de JavaScript.
