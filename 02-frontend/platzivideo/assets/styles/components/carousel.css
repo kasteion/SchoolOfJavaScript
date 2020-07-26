@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+body{
+    background-color: #8f57fd;
+    overflow-x: hidden;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.list {
+    margin: 10px;
+    width: 100vw;
+}
+
+.list--container {
+    margin-left: 20px;
+}
+
+.carousel--container {
+    white-space: nowrap;
+    overflow: scroll;
+    width: 97vw;
+    height: 300px;
+    margin-left: 1vw;
+}
+
+.carousel--container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel--item {
+    background-color: palevioletred;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 4vh;
+}
+
+.carousel--itemimg {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel--container:hover .carousel--item:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.carousel--container:hover .carousel--item {
+    opacity: 0.3;
+}
+
+.carousel--item:hover ~ .carousel--item {
+    transform: translate3d(100px, 0, 0);
+}
+
+.carousel--itemdetails {
+    align-items: flex-start;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    bottom: 0;
+    display: flex;
+    font-size: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    left: 0;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .carousel--itemdetails-img {
+    width: 20px;
+  }
+  
+  .carousel--item:hover .carousel--itemdetails {
+    opacity: 1;
+  }
+  
+  .carousel--itemdetails-title {
+    color: white;
+    margin: 5px 0px 0px 0px;
+  }
+  
+  .carousel-itemdetails-subtitle {
+    color: white;
+    font-size: 8px;
+    margin: 3px 0px;
+  }

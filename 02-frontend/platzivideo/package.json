@@ -1,0 +1,17 @@
+{
+  "name": "platzivideo",
+  "version": "1.0.0",
+  "description": "Platzi Video Frontend Design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -s ."
+  },
+  "author": "@kasteion",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@storybook/html": "^5.3.19",
+    "babel-loader": "^8.1.0"
+  }
+}

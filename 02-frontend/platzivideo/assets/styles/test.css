@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+body{
+    overflow-x: hidden;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #21c08b;
+    padding: 5px;
+}
+
+.register {
+    background-image: linear-gradient(#21c08b, #8f57fd);
+}
+
+.register a {
+    color: white;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+.register--container {
+    display: flex;
+    justify-content: center;
+    min-height: 600px;
+}
+
+.register--form {
+    width: 450px;
+    min-height: 700px;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-color: rgba(255,255,255,0.15);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.50);
+    padding: 100px 75px 70px 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.register--form-title {
+    font-size: 25px;
+}
+
+.register--form-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.register--form-input {
+    margin: 10px 0px 10px 0px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    padding: 12px;
+    width: 300px;
+    color: white;
+}
+
+.register--form-input::placeholder {
+    color:white;
+}
+
+.register--form-submit {
+    margin: 20px 0px 10px 0px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.30);
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.register--form-socialbutton-container {
+    margin-top: 40px;
+}
+
+.register--form-socialbutton {
+    display: flex;
+    align-items: center;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.register--form-socialbutton * {
+    padding: 5px;
+}
+
+.register--form-check-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    background-color: #8f57fd;
+    padding: 30px;
+}
+
+.footer--anchor {
+    color: white;
+    text-decoration: none;
+    margin: 5px 15px 5px 15px;
+}
+
+.footer--anchor:hover {
+    text-decoration: underline;
+}

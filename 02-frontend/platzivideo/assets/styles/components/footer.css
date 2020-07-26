@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+body{
+    background-color: #8f57fd;
+    overflow-x: hidden;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.footer {
+    padding: 30px;
+}
+
+.footer--anchor {
+    color: white;
+    text-decoration: none;
+    margin: 5px 15px 5px 15px;
+}
+
+.footer--anchor:hover {
+    text-decoration: underline;
+}

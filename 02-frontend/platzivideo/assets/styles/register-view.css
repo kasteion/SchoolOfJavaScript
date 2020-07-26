@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+.register--header {
+    background-color: #21c08b;
+    padding: 5px;
+}
+
+.register {
+    background-image: linear-gradient(#21c08b, #8f57fd);
+}
+
+.register--container {
+    min-height: 600px;
+}
