@@ -13,3 +13,7 @@ El curso de Frontend contiene el resumen del curso en los archivos frontend.md, 
 3. JavaScript Basics
 
 El siguiente es el curso básico de JavaScript, en que se introduce rapidamente a algunos conceptos del lenguaje JavaScript.
+
+4. JavaScript Fundamentals
+
+El siguiente es el curso de fundmentos de JavaScript. Un poco más a profundidad y en este curso ya se entra un poco más al asíncronismo. El proyecto de este curso es un juego de Simon Dice.
