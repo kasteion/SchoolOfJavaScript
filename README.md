@@ -17,3 +17,7 @@ El siguiente es el curso básico de JavaScript, en que se introduce rápidamente
 4. JavaScript Fundamentals
 
 El siguiente es el curso de fundamentos de JavaScript. Un poco más a profundidad y en este curso ya se entra un poco más al asíncronismo. El proyecto de este curso es un juego de Simon Dice.
+
+5. ECMA Script 6
+
+Un curso sobre los cambios que han existido en el lenguaje de versión en versión y como se van agregando caracteristicas al lenguaje.

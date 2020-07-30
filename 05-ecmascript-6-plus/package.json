@@ -1,0 +1,27 @@
+{
+  "name": "ecmascript6",
+  "version": "1.0.0",
+  "description": "Curso de ECMAScript6 +",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasteion/SchoolOfJavaScript.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "ECMAScript6+"
+  ],
+  "author": "kasteion (castellonbedoya@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasteion/SchoolOfJavaScript/issues"
+  },
+  "homepage": "https://github.com/kasteion/SchoolOfJavaScript#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
