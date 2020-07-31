@@ -1,0 +1,32 @@
+{
+  "name": "06-asynchronism",
+  "version": "1.0.0",
+  "description": "Curso de Asincronismo en JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "callbacks": "node src/callbacks.js",
+    "callbacks:challenge": "node src/callbacks-challenge.js",
+    "promises": "node src/promises.js",
+    "promises:challenge": "node src/promises-challenge.js",
+    "async": "node src/async-await.js",
+    "async:challenge": "node src/async-await-challenge.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasteion/SchoolOfJavaScript.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Asynchronism"
+  ],
+  "author": "@kasteion (castellonbedoya@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasteion/SchoolOfJavaScript/issues"
+  },
+  "homepage": "https://github.com/kasteion/SchoolOfJavaScript#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
