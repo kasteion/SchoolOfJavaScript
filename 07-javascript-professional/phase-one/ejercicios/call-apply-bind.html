@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call, Apply, Bind</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <u>
+        <li><button class="call-to-action">Aprender</button></li>
+        <li><button class="call-to-action">Aprender Más</button></li>
+        <li><button class="call-to-action">¡Nunca parar de Aprender!</button></li>
+    </u>
+    <script>
+        // Establecer 'this' usando 'call'
+        function saludar() {
+            console.log(`Hola. Soy ${this.name} ${this.surname}`)
+        }
+
+        function walk(mts, direction) {
+            console.log(`${this.name} walks ${mts} mts to the ${direction}`)
+        }
+
+        const rick = {
+            name: 'Rick',
+            surname: 'Sanchéz'
+        }
+
+        saludar.call(rick)
+        walk.call(rick, 400, 'north')
+
+        saludar.apply(rick)
+        walk.apply(rick, [400, 'east'])
+
+        const saludarRick = saludar.bind(rick)
+        const caminarRick = walk.bind(rick, 400)
+
+        saludarRick()
+        caminarRick('south')
+    </script>
+</body>
+</html>

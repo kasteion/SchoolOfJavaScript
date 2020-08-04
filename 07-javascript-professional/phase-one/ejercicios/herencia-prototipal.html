@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia Prototipal</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go Back</a>
+    <p><em>Abre la consola</em></p>
+    <h1><code>SomeObject.prototype</code> es un objeto donde definimos el
+    prototipo de las instancias de <code>SomeObject</code>. Es decir, las 
+    instancias de <code>SomeObject</code> van a "heredar" de 
+    <code>SomeObject.prototype</code>.</h1>
+    <h1><code>SomeObject.[[Prototype]]</code> es el prototipo de
+    <code>SomeObject</code>. Es decir, <code>SomeObject</code> "hereda" de
+    <code>SomeObject.prototype</code>.</h1>
+    <script>
+        function Hero(name){
+            this.name = name
+        }
+
+        Hero.prototype.saludar = function(){
+            console.log(`Hola, yo soy ${this.name}`)
+        }
+
+        const zelda = new Hero('Zelda')
+        
+        console.log('Name: ', zelda.name)
+        console.log('Saludar: ', zelda.saludar)
+        console.log('toString: ', zelda.toString)
+        console.log('hasOwnProperty("name"): ', zelda.hasOwnProperty('name'))
+        console.log('hasOwnProperty("saludar"): ', zelda.hasOwnProperty('saludar'))
+        
+        // zelda.fight() existe? Nope
+        // zelda.prototype.fight() existe? si ejecutemoslo
+        // zelda.toString() existe? Nope
+        // zelda.prototype.toString() existe? Nope
+        // zelda.prototype.prototype.toString() existe? si ejecutemoslo
+        // const prototypeOfZelda = Object.getPrototypeOf(zelda)
+    </script>
+</body>
+</html>

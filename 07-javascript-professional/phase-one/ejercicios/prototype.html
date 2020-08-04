@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <script>
+        // Esto es un objeto, pero estos no tienen prototypes.
+
+        const zelda = {
+            name: 'Zelda'
+        }
+
+        zelda.saludar = function() {
+            console.log(`Hola, soy ${this.name}`)
+        }
+
+        const link = {
+            name: 'Link'
+        }
+
+        link.saludar = function() {
+            console.log(`Hola, soy ${this.name}`)
+        }
+
+        zelda.saludar()
+        link.saludar()
+
+        // PRIMERA EVOLUCIÓN
+        // Una función que crea objetos con sus respectivas funciones.
+        function heroes(name){
+            const hero = {
+                name
+            }
+
+            hero.saludar = function() {
+                console.log(`Hola, soy ${this.name} 1.1`)
+            }
+
+            return hero
+        }
+
+        const zelda2 = heroes('Zelda')
+        const link2 = heroes('Link')
+
+        zelda2.saludar()
+        link2.saludar()
+
+        // SEGUNDA EVOLUCIÓN
+        const heroMethods = {
+            saludar: function() {
+                console.log(`Hola, soy ${this.name} 1.2`)
+            }
+        }
+
+        function heroes2(name) {
+            const hero = {
+                name
+            }
+
+            hero.saludar = heroMethods.saludar
+
+            return hero
+        }
+
+        const zelda3 = heroes2('Zelda')
+        const link3 = heroes2('Link')
+
+        zelda3.saludar()
+        link3.saludar()
+
+        // TERCERA EVOLUCIÓN
+
+        const heroMethods2 = {
+            saludar: function(){
+                console.log(`Hola, soy ${this.name} 1.3`)
+            }
+        }
+
+        function heroes3(name){
+            const hero = Object.create(heroMethods2)
+            hero.name = name
+            return hero
+        }
+
+        const zelda4 = heroes3('Zelda')
+        const link4 = heroes3('Link')
+
+        zelda4.saludar()
+        link4.saludar()
+
+        // CUARTA EVOLUCIÓN
+        function Heroes4(name){
+            const hero = Object.create(Heroes4.prototype)
+            hero.name = name
+            return hero
+        }
+
+        Heroes4.prototype.saludar = function() {
+            console.log(`Hola, soy ${this.name} 1.4`)
+        }
+
+        const zelda5 = Heroes4('Zelda')
+        const link5 = Heroes4('Link')
+
+        zelda5.saludar()
+        link5.saludar()
+
+        // QUINTA EVOLUCIÓN
+        function Heroes5(name){
+            this.name = name
+        }
+
+        Heroes5.prototype.saludar = function() {
+            console.log(`Hola, soy ${this.name} 1.5`)   
+        }
+
+        const zelda6 = new Heroes5('Zelda')
+        const link6 = new Heroes5('Link')
+
+        zelda6.saludar()
+        link6.saludar()
+    </script>
+</body>
+</html>

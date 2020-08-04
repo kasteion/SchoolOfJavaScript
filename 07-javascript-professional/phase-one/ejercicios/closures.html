@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+    <script>
+        //IIFE - Immediatly Invoked Function Expression
+        (function() {
+            let color = 'green'
+            function printColor() {
+                console.log(color)
+            }
+            printColor()
+        })()
+
+        function makeColorPrinter(color) {
+            let colorMessage = `The color is ${color}`
+            return function() {
+                console.log(colorMessage)
+            }
+        }
+
+        let greenColorPrinter = makeColorPrinter('green') 
+        console.log(greenColorPrinter())
+
+        function makeCounter(n){
+            let count = n
+            return {
+                increase: function() {
+                    count++
+                },
+                decrease: function(){
+                    count--
+                },
+                getCount: function() {
+                    return count
+                }
+            }
+        }
+
+        let counter = makeCounter(7)
+        counter.increase()
+        counter.increase()
+        counter.increase()
+        console.log(counter.getCount())
+        counter.decrease()
+        counter.decrease()
+        counter.decrease()
+        counter.decrease()
+        console.log(counter.getCount())
+    </script>
+</body>
+</html>
