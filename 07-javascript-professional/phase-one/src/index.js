@@ -1,7 +1,6 @@
 import MediaPlayer from './MediaPlayer.js'
 import AutoPlay from './plugins/AutoPlay.js'
 import AutoPause from './plugins/AutoPause.js'
-import AdsPlugin from './plugins/Ads/index.js'
 
 const video = document.querySelector('video')
 const play = document.getElementById('play')

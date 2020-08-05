@@ -471,7 +471,23 @@ Nos permiten declarar la forma exacta de un objeto, definiendo los tipos de sus 
 
 En las clases en TypeScript sí existen las propiedades privadas.
 
+Ejemplo:
+
+> ./ejercicios/typescript/index.html
+
 ## CONVERTIR EL PROYECTO A TYPESCRIPT
+
+Ejemplo:
+
+> src/index.ts 
+>
+> src/index.ts 
+>
+> src/MediaPlayer.ts 
+> 
+> src/plugins/AutoPlay.ts 
+> 
+> src/plugins/AutoPause.ts 
 
 # PATRONES DE DISEÑO
 
@@ -561,6 +577,10 @@ Caso de Uso:
 
 ## IMPLEMENTACIÓN DEL PATRÓN SINGLETON
 
+Ejemplo:
+
+> $ ejercicios/singleton/index.html
+
 ## ¿CÓMO FUNCIONA EL PATRÓN OBSERVER?
 
 El patrón observer se compone de un sujeto que ofrece mecanismos de suscripción y desuscripción a múltiples observadores que quieren ser notificados de los cambios en dicho sujeto. Cada observador expone un método de update que es usado por el sujeto para notificar cualquier cambio a todos los suscritos.
@@ -571,6 +591,10 @@ Es uno de los patrones más utilizados, algunos ejemplos típicos son:
 - Listeners en página web.
 
 ## IMPLEMENTACIÓN DEL PATRÓN OBSERVER
+
+Ejemplo:
+
+> $ ejercicios/observer/index.html
 
 ## CASOS DE USO DEL PATRON OBSERVER: REDUX
 
@@ -632,9 +656,17 @@ Ejemplos: Lodash.memoize
 
 ## IMPLEMENTACIÓN DEL PATRÓN DECORATOR
 
+Ejemplo:
+
+> ejercicios/decorator/index.html
+
 # PROYECTO: MEDIAPLAYER
 
 ## IMPLEMENTACIÓN DE PLUGIN DE ADS: DESPLEGANDO EN CONSOLA
+
+> src/plugins/Ads/Ads.ts 
+>
+> src/plugins/Ads/index.ts
 
 ## IMPLEMENTACIÓN DE PLUGIN DE ADS: DESPLEGANDO EN PANTALLA
 
@@ -655,7 +687,7 @@ En mediaplayer:
 >
 > $ npm login
 >
-> npm publish --access=public
+> $ npm publish --access=public
 
 En la carpeta del website:
 > $ npm install @kasteion/platzimediaplayer
