@@ -21,3 +21,11 @@ El siguiente es el curso de fundamentos de JavaScript. Un poco más a profundida
 5. ECMA Script 6
 
 Un curso sobre los cambios que han existido en el lenguaje de versión en versión y como se van agregando caracteristicas al lenguaje.
+
+6. Asyncronismo con JavaScript
+
+En este curso practicamos más sobre los callbacks, promesas y async await.
+
+7. JavaScript Profesional
+
+En este curso vemos conceptos a nivel profesional de JavaScript, patrones de diseño, Proxy, Service Workers, publicamos a npm, etc.
