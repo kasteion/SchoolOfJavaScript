@@ -1,0 +1,15 @@
+@import '../Vars.scss';
+
+.footer {
+    padding: 30px;
+}
+
+.footer--anchor {
+    color: white;
+    text-decoration: none;
+    margin: 5px 15px 5px 15px;
+}
+
+.footer--anchor:hover {
+    text-decoration: underline;
+}

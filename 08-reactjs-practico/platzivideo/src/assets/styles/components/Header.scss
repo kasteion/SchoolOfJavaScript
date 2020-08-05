@@ -1,0 +1,55 @@
+@import '../Vars.scss';
+
+.header {
+    background-color: $main-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.header--nologin {
+    background-color: #21c08b;
+}
+
+.header--dropbtn {
+    background-color: $main-color;
+    color: white;
+    font-size: 16px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100px;
+}
+  
+.header--dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+}
+  
+.header--dropdown-content {
+    display: none;
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+}
+  
+.header--dropdown-content a {
+    color:white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: right;
+    min-width: 140px;
+    right: -30px;
+    position: relative;
+}
+
+.header--dropdown:hover .header--dropdown-content {
+    display: block;
+}
+
+.header--dropdown-content a:hover {
+    text-decoration: underline;
+}
