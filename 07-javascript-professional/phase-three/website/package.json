@@ -1,0 +1,33 @@
+{
+  "name": "platzivideo-website",
+  "version": "1.0.0",
+  "description": "The website part",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasteion/SchoolOfJavaScript.git"
+  },
+  "keywords": [
+    "Website"
+  ],
+  "author": "@kasteion (castellonbedoya@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasteion/SchoolOfJavaScript/issues"
+  },
+  "homepage": "https://github.com/kasteion/SchoolOfJavaScript#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.9.7"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "@kasteion/platzimediaplayer": "^2.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@kasteion/platzimediaplayer",
+  "version": "2.0.0",
+  "description": "Dividing the media player from the website",
+  "main": "lib/MediaPlayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc ./src/MediaPlayer.ts ./src/plugins/AutoPause.ts ./src/plugins/AutoPlay.ts ./src/plugins/Ads/Ads.ts ./src/plugins/Ads/Index.ts --outDir ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasteion/SchoolOfJavaScript.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "MediaPlayer"
+  ],
+  "author": "@kasteion (castellonbedoya@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasteion/SchoolOfJavaScript/issues"
+  },
+  "homepage": "https://github.com/kasteion/SchoolOfJavaScript#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {}
+}

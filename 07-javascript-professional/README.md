@@ -432,9 +432,9 @@ Los navegadores no entienden TypeScript así qué lo vamos a transpilar a JavaSc
 Editar:
         "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
 
-Y agregar:
+Y agregar al final:
         "browserslist": [
-            "last 1 Chrome version
+            "last 1 Chrome version"
         ]
 
 Ejecutar:
@@ -684,6 +684,12 @@ En mediaplayer:
 > $ npm run build
 >
 > $ npm whoami
+>
+> "main": "lib/MediaPlayer.js",
+>
+> "build": "tsc ./src/MediaPlayer.ts ./src/plugins/AutoPause.ts ./src/plugins/AutoPlay.ts ./src/plugins/Ads/Ads.ts ./src/plugins/Ads/Index.ts --outDir ./lib",
+>
+> $ npm run build
 >
 > $ npm login
 >
