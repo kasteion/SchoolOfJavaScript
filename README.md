@@ -29,3 +29,12 @@ En este curso practicamos más sobre los callbacks, promesas y async await.
 7. JavaScript Profesional
 
 En este curso vemos conceptos a nivel profesional de JavaScript, patrones de diseño, Proxy, Service Workers, publicamos a npm, etc.
+
+8. React JS 
+
+Un curso práctico de React JS en el que pasamos el proyecto de video a una aplicación de React.
+Preparamos el entorno del proyecto y utilizamos React Hooks.
+
+9. React Router y Redux
+
+Agregamos al proyecto React Router para manejar las rutas de nuestro proyecto y tambien agregamos Redux para manejar el estado de nuestra aplicación.
