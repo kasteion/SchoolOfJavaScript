@@ -38,3 +38,7 @@ Preparamos el entorno del proyecto y utilizamos React Hooks.
 9. React Router y Redux
 
 Agregamos al proyecto React Router para manejar las rutas de nuestro proyecto y tambien agregamos Redux para manejar el estado de nuestra aplicación.
+
+10. Fundamentos de Node.js
+
+Un curso introductorio a los temas de Node.js y todas las cosas que se pueden hacer con el hasta controlar un chromium y una aplicación de escritorio con electron, un servidor web, etc. Increíble herramienta Node.

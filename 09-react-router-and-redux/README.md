@@ -232,3 +232,12 @@ Una vez instalado dentro de nuestro `index.js` vamos a añadir el siguiente cód
 
         const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
         const store = createStore(reducer, initialState, composeEnhancers())
+
+Me equivoqué:
+
+
+El componente de React Router llamado "Link" nos sirve para:
+
+¿Qué es un Action?
+
+¿Para qué nos sirve “mapDispatchToProps”?
