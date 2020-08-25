@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { setFavorite, deleteFavorite } from '../actions'
 import playIcon from '../assets/static/play-icon.png'
 import plusIcon from '../assets/static/plus-icon.png'
-import removeIcon from '../assets/static/remove-icon.webp'
+import removeIcon from '../assets/static/remove-icon.png'
 
 const CarouselItem = (props) => {
     const { id, cover, title, year, contentRating, duration, isList } = props
