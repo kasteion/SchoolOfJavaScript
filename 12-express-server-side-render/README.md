@@ -579,4 +579,21 @@ Y crear un nuevo archivo: next/pages/index.js
 
 ## CÓMO USAR GATSBY.JS
 
+Otra herramienta muy poderosa para crear aplicaciones super rápidas (para tener un MVP) y con una estructura de creación de proyecto bastante sencilla es gatsbyjs.
+
+> npm install -g gatsby-cli
+
+nos vamos al root de nuestro proyecto y ejecutamos:
+
+> gatsby new platzivideo-gatsby
+
+> cd platzivideo-gatsby
+> 
+> gatsby develop
+
 ## CUANDO USAR CADA UNA DE LAS HERRAMIENTAS PRESENTADAS
+
+1. Definir bien el objetivo del proyecto. (Para saber que herramientas usar)
+2. Definir el alcance del proyecto. (Para saber que herramientas usar)
+3. El tiempo de entrega, si tengo un deadline amplio es recomendado utilizar express.js
+4. Entorno de producción. Con express hay que levantar un servidor, con gatsby se pueden generar sitios estaticos. Express permite manejar rutas dinámicas, atrapando la ruta y sirviendo multiples aplicaciones dependiendo de la ruta.
