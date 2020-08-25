@@ -517,6 +517,8 @@ Airbnb propone una serie de reglas. Desde lado de webpack se puede configurar el
 
 > $ npm install eslint-loader eslint --save-dev
 
+En el webpack.config.json
+
         module: {
             rules: [
                 {
@@ -543,10 +545,37 @@ en package.json
 
 En los botons type='button'
 
-Un Deconstruct en el Player
+Un Deconstruct en el Player.
+
 # ALTERNATIVAS AL SSR CON EXPRESS
 
+Existen multiples alternativas o frameworks que nos permiten hacer de forma más eficiente. Por ejemplo Gatsbyjs y Next.js.
+
 ## CÓMO IMPLEMENTAR NEXT.JS
+
+Crear una carpeta en el root
+
+nextjs
+
+> $ cd nextjs
+>
+> $ npm init
+>
+> description: Next js en clase
+>
+> $ npm install react react-dom next
+
+
+Editar el package.json
+    "scripts": {
+        ...
+        "dev": "next",
+        "build": "next build",
+        "start": "next start"
+     }
+
+Crear una nueva carpeta next/pages
+Y crear un nuevo archivo: next/pages/index.js
 
 ## CÓMO USAR GATSBY.JS
 
