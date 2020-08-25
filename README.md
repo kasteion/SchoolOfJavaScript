@@ -42,3 +42,11 @@ Agregamos al proyecto React Router para manejar las rutas de nuestro proyecto y 
 10. Fundamentos de Node.js
 
 Un curso introductorio a los temas de Node.js y todas las cosas que se pueden hacer con el hasta controlar un chromium y una aplicación de escritorio con electron, un servidor web, etc. Increíble herramienta Node.
+
+11. Backend con Node.js
+
+Un curso en el que se trabaja el backend del proyecto de la escuela de JavaScript con express.js, mongodb, un poco de Docker, y se publica el proyecto en vercer (Anteriormente now.sh)
+
+12. Server Side Rendering con Express
+
+En este curso de trabaja con SSR para servir nuestra aplicación de React desde el servidor de maneja efectiva, tratando de optimizarla para darle una mejor experiencia al usuario.
