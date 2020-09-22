@@ -578,8 +578,82 @@ app.get('/auth/facebook/callback'...
 
 ## SEGURIDAD CON HELMET Y NPM AUDIT
 
+En esta clase aprenderemos a ponerle seguridad a nuestra aplicación.
+
+**Helmet** es un middleware que nos sirve para darle seguirdad a los headers de nuestra aplicación.
+
+helmetjs.github.io
+
+Lo podremos utilizar de la siguiente manera con la configuración por defecto:
+
+                const express = require('express')
+                const helmet = require('helmet')
+                const app = express()
+
+                app.use(helmet())
+
+También aprenderemos a utilizar npm audit para ver cuales son las vulnerabilidades de nuestra aplicación.
+
+Primero hay que instalar helmet...
+
+> npm install helmet
+
+Luego en movies-api/index.js hay que requerir la librería helmet.
+
+                const helmet = require('helmet')
+
+Luego en //body parser
+                app.use(express.json())
+                app.use(helmet())
+
+Recomendado hacer esto mismo para el render server.
+
+Luego corriendo:
+> npm audit
+
+Me indica que vulnerabilidades tiene
+
+Luego puedo ejecutar
+> npm audit fix
+
+Y puedo revisar cuales son las vulnerabilidades. La detección de vulnerabilidades puede aparecer en cualquier momento por lo tanto es bueno correr cada cierto tiempo el npm audit.
+
 ## AUTOMATIZAR EL CHECKEO DE VULNERABILIDADES CON SNYK
 
+Para usar snyk lo primero es crear una cuenta en https://app.snyk.io/signup para agilizar el proceso se puede utilizar la cuenta de GitHub.
+
+Despues de la creación de la cuenta nos redireccionara a las integraciones o podemos ir directamente mediante el link
+
+`https://app.snyk.io/org/<usuario>/integrations`.
+
+Seleccionamos la integración con GitHub (ó con el servicio más adecuado para nuestro proyecto) y allí nos aseguramos de conectar nuestra cuenta con GitHub, otorgando los permisos necesarios.
+
+Por último necesitamos agregar el repositorio de nuestro proyecto para que haga la revisión automática de vulnerabilidades en cada Pull request, mediante el botón `Add your GitHub repositories to Snyk`.
+
+Allí buscaremos el repositorio de nuestro proyecto, lo seleccionamos y le damos en el botón `Add 1 selected repository to Snyk`.
+
+Cuando termine la integración podemos dirigirnos al dashboard de nuestros proyectos haciendo click en la pestaña `Projects` o mediante el link `https://app.snyk.io/org/<usuario>/projects` y verificar el estado de nuestras dependencias.
+
+En lo posible debemos evitar tener vulnerabilidades High(H) o Medium(M) para corregirlas le damos click en `View report and fix`. 
+
+> TEner en cuenta que algunas vulnerabilidades no tienen solución en el momento por lo que toca estar pendiente de un posible fix o cambiar de librería.
+
 ## QUÉ ES OWASP Y BUENAS PRÁCTICAS DE SEGURIDAD
+
+**OWASP** son las siglas de **Open Web Application Security Project**, una organización que cuida las buenas prácticas de seguridad en las aplicaciones a nivel mundial.
+
+Hay un documento que se llama top ten OWASP que lista los 10 riesgos de seguridad más comunes. Como: Injection, Broken Authentication, Sensitive Data Exposure.
+
+Buenas prácticas:
+- Usa un gestor de contraseñas.
+- Usa multi-factor authentication.
+- IRL security.
+- Mantén actualizadas tus aplicaciones y SO.
+- Mantente informado.
+    - Twitter es una buena fuente de información acerca de los ataques de seguridad. #Security ó #Cybersecurity
+
+GDPR - General Data Protection Regulation - Es una ley que obliga a que los datos de los usuarios sean guardados de forma segura y hay que asegurarse de seguirla para que no te multen.
+
+Las contraseñas son como la ropa interior. Cambialas regularmente, no las dejes sobre el escritorio y no se la prestes a nadie.
 
 ## CONCLUSIONES Y CIERRE DEL CURSO
