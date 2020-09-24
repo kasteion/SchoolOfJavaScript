@@ -1,0 +1,24 @@
+.notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notfound--title {
+    font-size: 74px;
+}
+
+.notfound--message {
+    font-size: 32px;
+}
+
+.notfound--anchor {
+    font-size: 16px;
+    color: white;
+    padding: 30px;
+    text-decoration: none;
+}
+
+.notfound--anchor:hover {
+    text-decoration: underline;
+}
