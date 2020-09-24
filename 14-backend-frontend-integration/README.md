@@ -153,12 +153,30 @@ loginUser
 
 Luego se cambia en /src/frontend/containers/Login.jsx para agregar el action (loginUser) que acabamos de crear.
 
-
 ## VALIDACIÓN DE RUTAS
+
+Vamos a validar que rutas solo se pueden mostrar si el usuario ha inicado sesión.
+
+En el archivo src/frontend/index.js vamos a crear una validación basada en el initialState que tenemos.
+
+`<App isLogged={(preloadedState.user.id)}/>`
+
+Luego nos vamos a modificar /src/frontend/routes/App.js agregando una validación basada en isLogged.
+
+También hay que hacer cambios en /src/frontend/routes/serverRoutes.js
+
+Luego también hay que modificar el renderApp de nuestro archivo /src/server/server.js
 
 ## INTEGRACIÓN DEL CIERRE DE SESIÓN
 
+Cambiamos el /src/frontend/components/Header.jsx
+
 ## FETCH DE ESTADO INICIAL
+
+Es hora de cargar el estado inicial de nuestra aplicación.
+
+Para esto trabajamos en /src/server/server.js en la función renderApp
+
 
 # IMPLEMENTACIÓN DE TESTING EN EL PROYECTO
 

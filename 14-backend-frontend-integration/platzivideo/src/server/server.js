@@ -9,7 +9,6 @@ import { renderRoutes } from 'react-router-config'
 import { StaticRouter } from 'react-router-dom'
 import serverRoutes from '../frontend/routes/serverRoutes'
 import reducer from '../frontend/reducers'
-import initialState from '../frontend/intialState'
 import helmet from 'helmet'
 import getManifest from './getManifest'
 
@@ -79,17 +78,64 @@ const setResponse = (html, preloadedState, manifest) => {
     </html>`)
 }
 
-const renderApp = (req, res) => {
+const renderApp = async (req, res) => {
+    let initialState;
+    const { token, email, name, id } = req.cookies;
+
+    try {
+        let movieList = await axios({
+            url: `${process.env.API_URL}/api/movies`,
+            headers: { Authorization: `Bearer ${token}`},
+            method: 'get',
+        });
+        movieList = movieList.data.data;
+        initialState = {
+            user: {
+                id, email, name,
+            },
+            myList: [],
+            trends: movieList.filter(movie => movie.contentRating === 'PG' && movie._id),
+            originals: movieList.filter(movie => movie.contentRating === 'G' && movie._id) 
+        };
+    }
+    catch (err){
+        initialState = {
+            user: {},
+            myList: [],
+            trends: [],
+            originals: []
+        }
+    }
+
+    // if (id) {
+    //     initialState = { 
+    //         user: {email, name, id},
+    //         myList: [],
+    //         trends: [],
+    //         originals: []
+    //     }
+    // } else {
+    //     initialState = {
+    //         user: {},
+    //         myList: [],
+    //         trends: [],
+    //         originals: []
+    //     }
+    // }
+
     const store = createStore(reducer, initialState);
     const preloadedState = store.getState()
+    
+    const isLogged = (initialState.user.id)
+
     const html = renderToString(
         <Provider store={store}>
             <StaticRouter location={req.url} context={{}}>
-                { renderRoutes(serverRoutes)}
+                { renderRoutes(serverRoutes(isLogged))}
             </StaticRouter>
         </Provider>
     )
-    res.set("Content-Security-Policy", "default-src 'self'; img-src 'self' http://dummyimage.com; script-src 'self' 'unsafe-eval' 'sha256-T4gMAi7VL1GyW3+77Ol9xE1S/cFPb4d64iaMXBdt/vY='; style-src-elem 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com");
+    res.set("Content-Security-Policy", "default-src 'self'; img-src 'self' http://dummyimage.com https://gravatar.com; script-src 'self' 'unsafe-eval' 'sha256-imo0gkP2j7kyNLx7azlZvuyoUkXOQVLi/PcwoFHBB00=' 'sha256-QLka6SuR9mQKJBV7ukLN2EfOjRNBM7E5b8GWwNsgZrI='; style-src-elem 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com");
     res.send(setResponse(html, preloadedState, req.hashManifest))
 }
 
