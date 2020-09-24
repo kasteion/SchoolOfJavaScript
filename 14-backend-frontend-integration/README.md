@@ -84,9 +84,75 @@ Dentro de source/frontend/actions/index.js
 
 Usamos redux-thunk para poder identificar actions que tienen una función internamente. Si redux-thunk detecta que la función no tiene una action no hace nada.
 
+                import axios from 'axios';
+
+                export const setError = (payload) => ({
+                type: 'SET_ERROR',
+                payload,
+                });
+
+                export const registerUser = (payload, redirectUrl) => {
+                return (dispatch) => {
+                axios.post('/auth/sign-up', payload)
+                .then(({ data }) => dispatch(registerRequest(data)))
+                .then(() => {
+                window.location.href = redirectUrl
+                })
+                .catch(error => dispatch(setError(error)))
+                };
+                };
+
+                export { setFavorite as default } 
+
+Luego cambiamos src/frontend/containers/Register.jsx
+
+Remplazamos
+                import { registerRequest } from '../actions';
+
+Por
+                import { registerUser } from '../actions';
+
+Y buscamos todos los registerRequest por registerUser.
+
+Cambio 
+
+                const handleSubmit = (event) => {
+                event.preventDefault();
+                props.registerUser(form);
+                props.history.push('/');
+                };
+
+Por
+
+                const handleSubmit = (event) => {
+                event.preventDefault();
+                props.registerUser(form, '/login');
+                };
+
+En src/server/server.js cambiar ${config.apiUrl} por ${process.env.API_URL} y resto de cambios en app.post('/auth/sign-up'...
+
+Ejecutamos:
+
+> npm install
+>
+> npm run start:dev
+
 ## PROBANDO NUESTRO REGISTRO DE USUARIO
 
+Revisamos nuestra estrategia en src/server/utils/strategies/basic.js porque hay un problema con el config.
+
+> npm install
+> 
+> npm run start:dev
+
 ## INTEGRACIÓN DEL INICIO DE SESIÓN
+
+Vamos añadir un nuevo elemento a nuestros actions en src/frontend/actions/index.js
+
+loginUser
+
+Luego se cambia en /src/frontend/containers/Login.jsx para agregar el action (loginUser) que acabamos de crear.
+
 
 ## VALIDACIÓN DE RUTAS
 

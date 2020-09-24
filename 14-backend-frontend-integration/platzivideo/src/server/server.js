@@ -89,7 +89,7 @@ const renderApp = (req, res) => {
             </StaticRouter>
         </Provider>
     )
-    res.set("Content-Security-Policy", "default-src 'self'; img-src 'self' http://dummyimage.com; script-src 'self' 'sha256-T4gMAi7VL1GyW3+77Ol9xE1S/cFPb4d64iaMXBdt/vY='; style-src-elem 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com");
+    res.set("Content-Security-Policy", "default-src 'self'; img-src 'self' http://dummyimage.com; script-src 'self' 'unsafe-eval' 'sha256-T4gMAi7VL1GyW3+77Ol9xE1S/cFPb4d64iaMXBdt/vY='; style-src-elem 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com");
     res.send(setResponse(html, preloadedState, req.hashManifest))
 }
 
@@ -107,8 +107,8 @@ app.post('/auth/sign-in', async function(req, res, next){
                 const { token, ...user } = data
 
                 res.cookie("token", token,  {
-                    httpOnly: !config.dev,
-                    secure: !config.dev
+                    httpOnly: !(ENV === 'development'),
+                    secure: !(ENV === 'development')
                 })
 
                 res.status(200).json(user)
@@ -122,13 +122,21 @@ app.post('/auth/sign-in', async function(req, res, next){
 app.post('/auth/sign-up', async function(req, res, next){
     const { body: user } = req;
     try {
-        await axios ({
-            url: `${config.apiUrl}/api/auth/sign-up`,
+        const userData = await axios ({
+            url: `${process.env.API_URL}/api/auth/sign-up`,
             method: 'post',
-            data: user
+            data: {
+                'email': user.email,
+                'name': user.name,
+                'password': user.password
+            }
         })
 
-        res.status(201).json({ message: 'user created'})
+        res.status(201).json({
+            name: req.body.name,
+            email: req.body.email,
+            id: userData.data.id
+        })
     } catch(err){
         next(err)
     }
