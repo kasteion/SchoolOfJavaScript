@@ -365,7 +365,3 @@ Cada vez que necesites desplegar tus proyectos, debes de trabajar con el flujo d
 Si quieres ver el output del despliegue puedes ejecutar el siguiente comando:
 
 > heroku logs --tail --app NOMBRE-APP
-
-# MALAS
-
-Cuando creamos un thunk con Redux Thunk nuestra función recibe dos parámetros:
