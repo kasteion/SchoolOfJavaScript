@@ -177,33 +177,195 @@ Es hora de cargar el estado inicial de nuestra aplicación.
 
 Para esto trabajamos en /src/server/server.js en la función renderApp
 
-
 # IMPLEMENTACIÓN DE TESTING EN EL PROYECTO
 
 ## PRUEBAS UNITARIAS CON JEST
 
+Instalamos las dependencias que vamos a utilizar:
+
+> npm install jest enzyme enzyme-adapter-react-16 -D
+
+Agregamos un scripts pa package.json
+
+                "test": "jest",
+                "test:watch": "jest --watch"
+
+Vamos a trabajar sobre la carpeta frontend para añadir pruebas unitarias.
+
+Creamos una carpeta en /src/frontend/ llamada __test__ y dentro de esta carpeta el archivo setupTest.js.
+
+Luego creamos al final del package.json un nuevo elemento llamado "jest"
+
+                "jest": {
+                "setupoFilesAfterEnv": [
+                "<rootDir>/src/frontend/__test__/setupTest.js"
+                ]
+                }
+
 ## CONFIGURACIÓN DE FILEMOCKS Y STYLEMOCKS
+
+Antes de crear nuestras primeras pruebas debemos garantizar que tenemos los mocks necesarios para los archivos (imagenes de nuestro proyecto) y los estilos.
+
+Vamos a crear una carpeta en /src/frontend/ llamada __mocks__ y dentro de esta carpeta creamos el archivo styleMock.js y el archivo fileMock.js
+
+Luego en el archivo de package.json creamos un nuevo elemento dentro del objeto "jest".
+
+Así quedaría el objeto "jest" dentro de package.json
+
+                "jest": {
+                "setupoFilesAfterEnv": [
+                "<rootDir>/src/frontend/__test__/setupTest.js"
+                ],
+                "moduleNameMapper": {
+                "\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/frontend/__mocks__/fileMock.js",
+                "\\.(scss|css|sass)$": "<rootDir>/src/frontend/__mocks__/styleMock.js"
+                }
+                }
 
 ## IMPLEMENTANDO PRUEBAS EN EL FOOTER
 
+Hora de realizar nuestras primeras pruebas. Una de las convencios es identificar el espacio donde las vamos a añadir. Ordenar los elementos de acuerdo a como hemos organizado los elementos de nuestro proyecto.
+
+La prueba del footer la creo en `/src/frontend/__test__/components/Footer.test.js`.
+
 ## IMPLEMENTANDO SNAPSHOTS
+
+Un snapshot nos va a permitir a nosotros garantizar que la UI no cambie bruscamente. Digamos nosotros hacemos un cambio y lo mandamos a producción con doble elementos o sin algun elemento.
+
+Debemos instalar:
+
+> npm install --save-dev react-test-renderer
+
+Luego nos vamos siempre al test del Footer (Footer.test.js)
+
+Si al final si quiero el elemento pues tengo que hacerle un update al snapshot para que pase la prueba con.
+
+> jest --updateSnapshot
+
+O como dice la consola con:
+
+> npm run test -- -u
 
 ## CREANDO MOCKS DEL STORE
 
+El proyecto incorpora herramientas como React Router y Redux. Cuando probamos un componente que incorpora estas herramientas debemos garantizar que funciona de forma correcta. Esto lo hacemos por medio de un provider que garantiza que el store llega a los componentes y puede montar los elementos que recibe y probar cada una de las particulares que tienen los elementos que son parte de nuestro projecto.
+
+En ``src/frontend/__mocks__` creamos un archivo llamado ProviderMock.js
+
 ## IMPLEMENTANDO PRUEBAS EN EL HEADER
+
+Creamos el test del header en `/src/frontend/__test__/components/Header.test.js`
 
 ## PROBANDO EL ENVÍO DEL FORMULARIO
 
+Tenemos que garantizar que las diferentes partes de nuestro proyecto tengan una prueba. Partes como inicio de sesión, registro, las funciones de gravatar. Estas son las partes que debemos garantizar que funcionan.
+
+Esta prueba va a depender del componente Register.jsx
+
+Creamos una nueva prueba en `/src/frontend/__test__/containers/Register.test.js`
+
 ## PROBANDO GRAVATAR FUNCTION
+
+Una prueba para ver si cada vez que le envío un correo electrónico a la función de gravatar me devuelve una imagen.
+
+Creamos la prueba en `/src/frontend/__test__/utils/gravatar.test.js`
 
 ## PROBANDO ACCIONES
 
+Debemos crear un mock para las actions. Creamos un elemento en `/src/frontend/__mocks__/MovieMocks.js`
+
+Tambien creamos `/src/frontend/__test__/actions/index.js`
+
 ## JEST COVERAGE
+
+Ya añadimos pruebas a nuestro proyecto, pero es el momento de ver como obtener informes de nuestras pruebas y el coverage de las mismas.
+
+En package.json se activa el modo verbose
+                "jest": {
+                        "verbose": true,
+                        ...
+                }
+
+Para coverage tambien tenemos que agregar un nuevo script.
+        "test:coverage": "jest --coverage"
+
+Esto genera un reporte de coverage en la consola pero tambien genera uno en html más facil de ver.
 
 # DESPLIEGUE DEL FRONTEND
 
 ## DESPLEGAR PLATZI VIDEO EN HEROKU
 
-# CONCLUSIONES
+Una de las fases importantes dentro de la construcción de tus aplicaciones es desplegarlas a producción.
 
-## CONCLUSIONES Y CIERRE
+**Crear una cuenta en Heroku**
+Para crear una cuenta en Heroku es muy fácil, solo debes de ingresar al sitio https://heroku.com y en la esquina superior izquierda crear una cuenta.
+
+Una vez creada la cuenta vamos a crear un proyecto donde vivirá tu aplicación de Platzi Video.
+
+En el dashboard eliges la opción de "New" asignas un nombre a tu aplicación, "platzivideo-app".
+
+Elegir la región donde se encuentra físicamente el servidor... "United States".
+
+Y por último le damos "Create App".
+
+**Conectar proyecto**
+Ahora ha llegado el momento de conectar nuestra aplicación con Heroku, tienes dos opciones, conectar con el servicio de git privado que te ofrece Heroku o conectar con tu repositorio de GitHub.
+
+Con la opción "Heroku Git" se puede controlar mejor el flujo de la aplicación. Es necesario instalar "Heroku Cli" para poder trabajar mejor desde la terminal.
+
+Una vez instalado "Heroku CLI" debemos iniciar sesión y conectar nuestra aplicación con el repositorio privado que nos ofrece Heroku.
+
+> heroku login
+
+Este comando abre una nueva ventanan de tu navegador donde permite iniciar sesión. Una vez autenticados con Heroku, se puede conectar el proyecto al repositorio remoto.
+
+Se puede iniciar con 
+
+> git init
+
+Conectar remotamente con:
+
+> heroku git:remote -a NOMBRE-PROYECTO
+
+Agregar todos los cambios con
+
+> git add .
+
+Crear un commit 
+
+> git commit -m 'Deploy Platzi Video'
+
+Enviar los cambios a Heroku
+
+> git push heroku master
+
+Este comando desencadena el primer despliegue de la apliación, lo más probable es que falle ya que falta configurar algunas variables de entorno. 
+
+**Preparar proyecto**
+Especificar versión de Node, para esto vamos a editar nuestro archivo "package.json" y añadir el siguiente código:
+
+                "engines": {
+                        "node": "12.16.x"
+                }
+
+Agregar las varaibles de entorno a Heroku.
+
+Para agregar las variables de entorno es necesario ingresar al panel administrativo de tu proyecto y visitar la sección de "Settings", donde encontrarás la información de tu aplicación y luego la sección de "Config Vars".
+
+Deberás añadir cada una de las variables de entorno a la configuración de Heroku.
+
+Ahora estan todos los elementos listos y hay que enviar el cambio del engine de node para que se compile el proyecto, guarda los cambios y súbelos a heroku.
+
+Espera por el despliegue automático.
+
+> git push heroku master
+
+Cada vez que necesites desplegar tus proyectos, debes de trabajar con el flujo de git, guardando cambios y enviando a la rama principal, esto desencadena un despliegue.
+
+Si quieres ver el output del despliegue puedes ejecutar el siguiente comando:
+
+> heroku logs --tail --app NOMBRE-APP
+
+# MALAS
+
+Cuando creamos un thunk con Redux Thunk nuestra función recibe dos parámetros:

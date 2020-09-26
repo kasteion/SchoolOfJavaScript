@@ -1,0 +1,8 @@
+import gravatar from '../../utils/gravatar';
+
+test('Gravatar Function test', () => {
+  const email = 'oscar@arepa.dev';
+  // Esta url la consigo en el url https://es.gravatar.com/site/check/
+  const gravatarUrl = 'https://gravatar.com/avatar/4b84ab1122c7ee522710c5ead5525839';
+  expect(gravatarUrl).toEqual(gravatar(email));
+});
